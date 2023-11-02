@@ -8,7 +8,7 @@
     tools:context=".register2">
 
     <EditText
-        android:id="@+id/Nombre"
+        android:id="@+id/Nombre1"
         android:layout_width="247dp"
         android:layout_height="57dp"
         android:ems="10"
@@ -93,7 +93,7 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <EditText
-        android:id="@+id/Apellido"
+        android:id="@+id/Apellido1"
         android:layout_width="249dp"
         android:layout_height="54dp"
         android:layout_marginBottom="12dp"
