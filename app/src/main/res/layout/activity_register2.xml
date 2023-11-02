@@ -161,6 +161,8 @@
         android:layout_height="54dp"
         android:ems="10"
         android:inputType="phone"
+        android:text="Telefono"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
