@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import java.net.URL;
+import java.util.Map;
 
 public class register2 extends AppCompatActivity {
 
@@ -63,8 +64,8 @@ public class register2 extends AppCompatActivity {
 
         }
         else{
-            progressDialog.show();
 
+            progressDialog.show();
             str_nombre = Nombre.getText().toString().trim();
             str_Correo = Correo.getText().toString().trim();
             str_Contra = Contra.getText().toString().trim();
@@ -79,16 +80,33 @@ public class register2 extends AppCompatActivity {
                     Contra.setText("");
                     Apellido.setText("");
                     Toast.makeText(register2.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register2.this, "no se pudo cargar", Toast.LENGTH_SHORT).show();
                 }
-            } new Response.ErrorListener() {
+            },new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     progressDialog.dismiss();
                     Toast.makeText(register2.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
-
                 }
+
+            }
+        }{
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> params = new HashMap<String,String>();
+
+                params.put("Nombre",str_nombre);
+                params.put("Apellido",str_Apellido);
+                params.put("Correo",str_Correo);
+                params.put("password",str_Contra);
+
+                return params;
             }
 
-        }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(registrar.this);
+        requestQueue.add(request);
     }
 }
