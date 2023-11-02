@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <EditText
-        android:id="@+id/Cumple"
+        android:id="@+id/Nacimiento"
         android:layout_width="248dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -53,19 +53,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.422" />
 
-    <RadioButton
-        android:id="@+id/Hombre1"
-        android:layout_width="142dp"
-        android:layout_height="51dp"
-        android:text="Hombre"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
-
     <Button
         android:id="@+id/Registrar"
         android:layout_width="183dp"
@@ -74,23 +61,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
-
-    <RadioButton
-        android:id="@+id/Mujer1"
-        android:layout_width="140dp"
-        android:layout_height="52dp"
-        android:text="Mujer"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.889" />
 
     <EditText
         android:id="@+id/Apellido1"
@@ -176,9 +150,22 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.95" />
+
+    <EditText
+        android:id="@+id/Telefono"
+        android:layout_width="249dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.513" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
