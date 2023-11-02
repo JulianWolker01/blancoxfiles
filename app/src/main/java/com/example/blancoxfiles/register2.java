@@ -12,7 +12,7 @@ public class register2 extends AppCompatActivity {
 
     EditText ConfirmarContra, Contra, Nombre, Apellido, Fecha, Telefono1;
     TextView Consigna;
-    ImageView Imagen;
+    ImageView Imagen, Tengocuenta;
     Button Boton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class register2 extends AppCompatActivity {
         Fecha = findViewById(R.id.Nacimiento);
         Contra = findViewById(R.id.Contrasena);
         ConfirmarContra = findViewById(R.id.ConfirmContrasena);
+        Tengocuenta = findViewById(R.id.volver);
 
     }
 }

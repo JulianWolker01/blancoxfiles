@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText Edit1,Edit2;
     Button btn1;
     TextView TextView;
-    ImageView ImageView,ImageView2,ImageView3, Tengocuenta;
+    ImageView ImageView,ImageView2,ImageView3;
 
 
 
@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView = findViewById(R.id.imageView);
         ImageView2 = findViewById(R.id.imageView8);
         ImageView3 = findViewById(R.id.imageView3);
-        Tengocuenta = findViewById(R.id.volver);
+
     }
 }
