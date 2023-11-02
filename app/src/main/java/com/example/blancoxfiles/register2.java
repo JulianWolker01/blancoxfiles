@@ -32,7 +32,5 @@ public class register2 extends AppCompatActivity {
         Contra = findViewById(R.id.Contrasena);
         ConfirmarContra = findViewById(R.id.ConfirmContrasena);
 
-
-
     }
 }

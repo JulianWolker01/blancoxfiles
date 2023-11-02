@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     EditText Edit1,Edit2;
-    Button btn1,btn2;
+    Button btn1;
     TextView TextView;
     ImageView ImageView,ImageView2,ImageView3;
 
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Edit1 = findViewById(R.id.editTextText);
         Edit2 = findViewById(R.id.editTextTextPassword);
         btn1 = findViewById(R.id.button);
-        btn2 = findViewById(R.id.button2);
         TextView = findViewById(R.id.textView);
         ImageView = findViewById(R.id.imageView);
         ImageView2 = findViewById(R.id.imageView8);
