@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +26,13 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText Email,Contra;
+    EditText Email, Contra;
     Button btn1;
     TextView TextView;
-    ImageView ImageView,ImageView2,ImageView3;
+    ProgressBar progressBar;
 
-    String str_Correo,str_Contra;
-    String url= "http://localhost/Funciones/validar_usuario.php ";
+    String str_Correo, str_Contra;
+    String url = "http://localhost/Funciones/validar_usuario.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Contra = findViewById(R.id.editTextTextPassword);
         btn1 = findViewById(R.id.button);
         TextView = findViewById(R.id.textView);
-        ImageView = findViewById(R.id.imageView);
-        ImageView2 = findViewById(R.id.imageView8);
-        ImageView3 = findViewById(R.id.imageView3);
+        progressBar = findViewById(R.id.progressBar);
     }
 
     public void Login(View view) {
@@ -53,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (Contra.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Contraseña", Toast.LENGTH_SHORT).show();
         } else {
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("zzzz");
-            progressDialog.show();
+            // Mostrar el ProgressBar
+            progressBar.setVisibility(View.VISIBLE);
 
             str_Correo = Email.getText().toString().trim();
             str_Contra = Contra.getText().toString().trim();
@@ -63,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
             StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    progressDialog.dismiss();
+                    // Ocultar el ProgressBar
+                    progressBar.setVisibility(View.GONE);
 
                     if (response.equalsIgnoreCase("Ingresaste Correctamente")) {
                         Contra.setText("");
@@ -77,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    progressDialog.dismiss();
+                    // Ocultar el ProgressBar
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }) {
