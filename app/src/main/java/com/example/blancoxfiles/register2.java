@@ -2,7 +2,7 @@ package com.example.blancoxfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,9 +25,9 @@ import java.util.Map;
 
 public class register2 extends AppCompatActivity {
 
-    EditText ConfirmarContra, Contra, Nombre, Apellido, Fecha, Telefono1, Correo;
-    TextView Consigna;
-    ImageView Imagen, Tengo;
+    EditText ConfirmarContra, Contra, Nombre, Apellido, edad, Telefono1, Correo;
+    TextView Consigna,Tengo;
+    ImageView Imagen;
     Button Boton;
     ProgressBar progressBar;
 
@@ -38,8 +38,7 @@ public class register2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
-
-
+        Tengo = findViewById(R.id.mensaje2);
         progressBar = findViewById(R.id.progressBar);
         Telefono1 = findViewById(R.id.Telefono);
         Boton = findViewById(R.id.Registrar);
@@ -47,11 +46,19 @@ public class register2 extends AppCompatActivity {
         Imagen = findViewById(R.id.Logo);
         Nombre = findViewById(R.id.Nombre1);
         Apellido = findViewById(R.id.Apellido1);
-        Fecha = findViewById(R.id.Nacimiento);
+        edad = findViewById(R.id.Edad);
         Contra = findViewById(R.id.Contrasena);
         ConfirmarContra = findViewById(R.id.ConfirmContrasena);
         Correo = findViewById(R.id.Correo);
 
+
+        Tengo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
         Boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +66,7 @@ public class register2 extends AppCompatActivity {
             }
         });
     }
+
 
     private void Register(View view) {
         // Mostrar el ProgressBar
@@ -72,7 +80,7 @@ public class register2 extends AppCompatActivity {
             Toast.makeText(this, "Ingresar Apellido", Toast.LENGTH_SHORT).show();
             // Ocultar el ProgressBar
             progressBar.setVisibility(View.GONE);
-        } else if (Fecha.getText().toString().isEmpty()) {
+        } else if (edad.getText().toString().isEmpty()) {
             Toast.makeText(this, "Fecha de Nacimiento", Toast.LENGTH_SHORT).show();
             // Ocultar el ProgressBar
             progressBar.setVisibility(View.GONE);
@@ -91,7 +99,7 @@ public class register2 extends AppCompatActivity {
         } else {
             str_nombre = Nombre.getText().toString().trim();
             str_Apellido = Apellido.getText().toString().trim();
-            str_Fecha = Fecha.getText().toString().trim();
+            str_Fecha = edad.getText().toString().trim();
             str_Telefono = Telefono1.getText().toString().trim();
             str_Correo = Correo.getText().toString().trim();
             str_Contra = Contra.getText().toString().trim();
@@ -103,7 +111,7 @@ public class register2 extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     Nombre.setText("");
                     Apellido.setText("");
-                    Fecha.setText("");
+                    edad.setText("");
                     Correo.setText("");
                     Contra.setText("");
                     Toast.makeText(register2.this, response, Toast.LENGTH_SHORT).show();

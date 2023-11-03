@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/Nombre1"
@@ -44,21 +46,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
-
-    <EditText
-        android:id="@+id/Nacimiento"
-        android:layout_width="248dp"
-        android:layout_height="54dp"
-        android:ems="10"
-        android:hint="DD/MM/YY"
-        android:inputType="date"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
 
     <Button
         android:id="@+id/Registrar"
@@ -147,34 +134,50 @@
         app:layout_constraintVertical_bias="0.041"
         app:srcCompat="@drawable/logoapp" />
 
-    <TextView
-        android:id="@+id/tengocuenta"
-        android:layout_width="191dp"
-        android:layout_height="30dp"
-        android:text="Ya tengo cuenta"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
     <EditText
         android:id="@+id/Telefono"
         android:layout_width="249dp"
         android:layout_height="54dp"
         android:ems="10"
+        android:hint="Telefono"
         android:inputType="phone"
-        android:text="Telefono"
-        android:textColor="#FFFFFF"
+        android:textColor="#F6E6E6"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/mensaje2"
+        android:layout_width="207dp"
+        android:layout_height="32dp"
+        android:text="Ya tengo Cuenta"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951" />
+
+    <EditText
+        android:id="@+id/Edad"
+        android:layout_width="248dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFDFD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
