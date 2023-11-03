@@ -32,7 +32,7 @@ public class register2 extends AppCompatActivity {
     ProgressBar progressBar;
 
     String str_nombre, str_Correo, str_Contra, str_Apellido, str_Fecha, str_Telefono;
-    String url = "http://localhost/scripts/Registrarse.php";
+    String url = "https://stoss-cone.000webhostapp.com/Proyecto_blanco/Registrarse.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
