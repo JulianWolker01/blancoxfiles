@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,17 +27,20 @@ public class register2 extends AppCompatActivity {
 
     EditText ConfirmarContra, Contra, Nombre, Apellido, Fecha, Telefono1, Correo;
     TextView Consigna;
-    ImageView Imagen, TengoCuenta;
+    ImageView Imagen, Tengo;
     Button Boton;
+    ProgressBar progressBar;
 
     String str_nombre, str_Correo, str_Contra, str_Apellido, str_Fecha, str_Telefono;
-    String url = "http://localhost/Funciones/Registrarse.php";
+    String url = "http://localhost/scripts/Registrarse.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
 
+
+        progressBar = findViewById(R.id.progressBar);
         Telefono1 = findViewById(R.id.Telefono);
         Boton = findViewById(R.id.Registrar);
         Consigna = findViewById(R.id.mensaje);
@@ -47,7 +51,6 @@ public class register2 extends AppCompatActivity {
         Contra = findViewById(R.id.Contrasena);
         ConfirmarContra = findViewById(R.id.ConfirmContrasena);
         Correo = findViewById(R.id.Correo);
-        TengoCuenta = findViewById(R.id.tengocuenta);
 
         Boton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,28 +61,33 @@ public class register2 extends AppCompatActivity {
     }
 
     private void Register(View view) {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Please wait a second...");
-        progressDialog.show();
+        // Mostrar el ProgressBar
+        progressBar.setVisibility(View.VISIBLE);
 
         if (Nombre.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Nombre", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else if (Apellido.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Apellido", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else if (Fecha.getText().toString().isEmpty()) {
             Toast.makeText(this, "Fecha de Nacimiento", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else if (Telefono1.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Telefono", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else if (Correo.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Correo", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else if (Contra.getText().toString().isEmpty()) {
             Toast.makeText(this, "Ingresar Password", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            // Ocultar el ProgressBar
+            progressBar.setVisibility(View.GONE);
         } else {
             str_nombre = Nombre.getText().toString().trim();
             str_Apellido = Apellido.getText().toString().trim();
@@ -91,7 +99,8 @@ public class register2 extends AppCompatActivity {
             StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    progressDialog.dismiss();
+                    // Ocultar el ProgressBar
+                    progressBar.setVisibility(View.GONE);
                     Nombre.setText("");
                     Apellido.setText("");
                     Fecha.setText("");
@@ -102,7 +111,8 @@ public class register2 extends AppCompatActivity {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    progressDialog.dismiss();
+                    // Ocultar el ProgressBar
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(register2.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }) {

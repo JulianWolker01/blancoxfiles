@@ -62,8 +62,8 @@
         app:layout_constraintVertical_bias="0.679" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="172dp"
+        android:id="@+id/volver"
+        android:layout_width="232dp"
         android:layout_height="30dp"
         android:text="¿No tienes una cuenta?"
         android:textAlignment="center"

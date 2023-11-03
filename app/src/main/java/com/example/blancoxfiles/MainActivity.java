@@ -28,12 +28,10 @@ public class MainActivity extends AppCompatActivity {
     EditText Email, Contra;
     Button btn1;
     ImageView imagen;
-    TextView TextView;
-
+    TextView TextView1;
     ProgressBar progressBar;
-
     String str_Correo, str_Contra;
-    String url = "http://localhost/Funciones/validar_usuario.php";
+    String url = "http://localhost/scripts/validar_usuario.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +42,16 @@ public class MainActivity extends AppCompatActivity {
         Email = findViewById(R.id.editTextText);
         Contra = findViewById(R.id.editTextTextPassword);
         btn1 = findViewById(R.id.button);
-        TextView = findViewById(R.id.textView);
+        TextView1 = findViewById(R.id.volver);
         progressBar = findViewById(R.id.progressBar);
+
+        TextView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),register2.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void Login(View view) {
