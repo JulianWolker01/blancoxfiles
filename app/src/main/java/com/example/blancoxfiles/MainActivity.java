@@ -16,6 +16,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -23,7 +24,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
 
     EditText Email,Contra;
     Button btn1;
@@ -45,22 +45,16 @@ public class MainActivity extends AppCompatActivity {
         ImageView = findViewById(R.id.imageView);
         ImageView2 = findViewById(R.id.imageView8);
         ImageView3 = findViewById(R.id.imageView3);
-
     }
-    public void Login(View view){
 
-        if (Email.getText().toString().equals(" ")){
-            Toast.makeText(this, "ingresar usuario", Toast.LENGTH_SHORT).show();
-        }
-        else if (Contra.getText().toString().equals(" ")){
-
-            Toast.makeText(this, "Ingresar Contrasena", Toast.LENGTH_SHORT).show();
-        }
-        else{
-
+    public void Login(View view) {
+        if (Email.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Ingresar usuario", Toast.LENGTH_SHORT).show();
+        } else if (Contra.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Ingresar Contraseña", Toast.LENGTH_SHORT).show();
+        } else {
             final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("zzz espere");
-
+            progressDialog.setMessage("zzzz");
             progressDialog.show();
 
             str_Correo = Email.getText().toString().trim();
@@ -71,30 +65,33 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     progressDialog.dismiss();
 
-                    if (response.equalsIgnoreCase("Ingresaste Correctamente")){
+                    if (response.equalsIgnoreCase("Ingresaste Correctamente")) {
                         Contra.setText("");
                         Email.setText("");
-
                         startActivity(new Intent(getApplicationContext(), Inicio.class));
-                        Toast.makeText(MainActivity.this,response, Toast.LENGTH_SHORT).show();
-
-                    }
-                    else {
+                        Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+                    } else {
                         Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
                     }
                 }
-            }{
-
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    progressDialog.dismiss();
+                    Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
                     params.put("Correo", str_Correo);
                     params.put("password", str_Contra);
                     return params;
-            }
+                }
+            };
 
-        };
             RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
             requestQueue.add(request);
+        }
     }
 }
