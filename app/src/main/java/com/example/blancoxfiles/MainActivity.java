@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView ImageView,ImageView2,ImageView3;
 
     String str_Correo,str_Contra;
-    String url= " ";
+    String url= "http://localhost/Funciones/validar_usuario.php ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

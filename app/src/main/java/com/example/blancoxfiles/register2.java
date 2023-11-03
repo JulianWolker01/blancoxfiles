@@ -30,7 +30,7 @@ public class register2 extends AppCompatActivity {
     Button Boton;
 
     String str_nombre, str_Correo, str_Contra, str_Apellido, str_Fecha, str_Telefono;
-    String url = "";
+    String url = "http://localhost/Funciones/Registrarse.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
