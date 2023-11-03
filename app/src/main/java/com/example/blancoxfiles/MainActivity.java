@@ -2,7 +2,6 @@ package com.example.blancoxfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText Email, Contra;
     Button btn1;
+    ImageView imagen;
     TextView TextView;
+
     ProgressBar progressBar;
 
     String str_Correo, str_Contra;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imagen = findViewById(R.id.logo1);
         Email = findViewById(R.id.editTextText);
         Contra = findViewById(R.id.editTextTextPassword);
         btn1 = findViewById(R.id.button);
