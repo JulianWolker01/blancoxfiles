@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "294355035122",
+    "firebase_url": "https://lector-nfc-default-rtdb.firebaseio.com",
+    "project_id": "lector-nfc",
+    "storage_bucket": "lector-nfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294355035122:android:30facbb8f047048b57c16b",
+        "android_client_info": {
+          "package_name": "com.example.blancoxfiles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnGJwDneSYhYS1JZegPv5EOgX-mMFmcpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294355035122:android:042e0a518aaa2f1757c16b",
+        "android_client_info": {
+          "package_name": "com.example.tarea"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnGJwDneSYhYS1JZegPv5EOgX-mMFmcpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
