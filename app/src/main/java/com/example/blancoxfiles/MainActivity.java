@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     TextView TextView1;
     ProgressBar progressBar;
     String str_Correo, str_Contra;
-    String url = "https://stoss-cone.000webhostapp.com/Proyecto_blanco/validar_usuario.php";
+    String url = "https://papasfritas12345.000webhostapp.com/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
